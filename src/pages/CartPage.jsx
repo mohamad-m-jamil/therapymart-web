@@ -2,14 +2,10 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaTrash } from 'react-icons/fa';
 import LazyImage from '../components/common/LazyImage';
-// Assume CartContext is implemented
+import { CartContext } from '../context/CartContext';
 
 const CartPage = () => {
-  // For demo purposes, hardcoded cart items
-  const cartItems = [
-    { id: 1, name: "Medical Scrubs", price: 45.99, quantity: 2, image: "/images/scrubs-1.jpg" },
-    { id: 3, name: "Stethoscope", price: 120.00, quantity: 1, image: "/images/stethoscope-1.jpg" }
-  ];
+  const { cartItems, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
   
   const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   
@@ -52,7 +48,7 @@ const CartPage = () => {
                     <td className="px-4 py-3">
                       <div className="flex items-center">
                         <LazyImage 
-                          src={item.image} 
+                          src={item.images && item.images.length > 0 ? item.images[0] : ''}
                           alt={item.name}
                           width="60px"
                           height="60px"
@@ -61,11 +57,31 @@ const CartPage = () => {
                         <span className="font-medium">{item.name}</span>
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-center">{item.quantity}</td>
+                    <td className="px-4 py-3 text-center">
+                      <div className="flex items-center justify-center">
+                        <button 
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          disabled={item.quantity <= 1}
+                          className="px-2 py-1 bg-gray-200 text-gray-800 rounded-l-md hover:bg-gray-300 disabled:opacity-50"
+                        >
+                          -
+                        </button>
+                        <span className="px-4">{item.quantity}</span>
+                        <button 
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          className="px-2 py-1 bg-gray-200 text-gray-800 rounded-r-md hover:bg-gray-300"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
                     <td className="px-4 py-3 text-right">${item.price.toFixed(2)}</td>
                     <td className="px-4 py-3 text-right">${(item.price * item.quantity).toFixed(2)}</td>
                     <td className="px-4 py-3 text-right">
-                      <button className="text-red-500 hover:text-red-700">
+                      <button 
+                        onClick={() => removeFromCart(item.id)}
+                        className="text-red-500 hover:text-red-700"
+                      >
                         <FaTrash />
                       </button>
                     </td>
@@ -83,9 +99,17 @@ const CartPage = () => {
           </div>
           
           <div className="flex justify-between items-center">
-            <Link to="/" className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors">
-              Continue Shopping
-            </Link>
+            <div>
+              <Link to="/" className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors">
+                Continue Shopping
+              </Link>
+              <button 
+                onClick={clearCart}
+                className="ml-4 px-6 py-3 bg-red-100 text-red-600 rounded-md hover:bg-red-200 transition-colors"
+              >
+                Clear Cart
+              </button>
+            </div>
             
             <button 
               onClick={handleWhatsAppCheckout}

@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-blue-800 mb-4">Medical Clinic Merchandise</h1>
+        <h1 className="text-3xl font-bold text-blue-800 mb-4">Medical Supply Store</h1>
         <ProductSearch onSearch={handleSearch} />
       </div>
       

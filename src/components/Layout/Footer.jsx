@@ -1,41 +1,36 @@
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import '../../style.css'; // Make sure this path is correct
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-800 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">MediMerch</h3>
-            <p>
-              Quality medical merchandise for healthcare professionals.
-            </p>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-columns">
+          <div className="footer-column">
+            <h3 className="footer-title">MediMerch</h3>
+            <p>Quality medical merchandise for healthcare professionals.</p>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-            <div className="flex items-center mb-2">
-              <FaWhatsapp className="mr-2" /> +1 (123) 456-7890
+          <div className="footer-column">
+            <h3 className="footer-title">Contact Us</h3>
+            <div className="footer-contact">
+              <FaWhatsapp className="footer-icon" /> +961 71 631 597
             </div>
-            <div className="flex items-center">
-              <FaInstagram className="mr-2" /> @mediclinic
+            <div className="footer-contact">
+              <FaInstagram className="footer-icon" /> @therapy.mart
             </div>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul>
-              <li className="mb-2">
-                <a href="/" className="hover:underline">Home</a>
-              </li>
-              <li className="mb-2">
-                <a href="/cart" className="hover:underline">My Cart</a>
-              </li>
+          <div className="footer-column">
+            <h3 className="footer-title">Quick Links</h3>
+            <ul className="footer-links">
+              <li><a href="/" className="footer-link">Home</a></li>
+              <li><a href="/cart" className="footer-link">My Cart</a></li>
             </ul>
           </div>
         </div>
-        
-        <div className="border-t border-blue-700 mt-8 pt-4 text-center">
+
+        <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} MediMerch. All rights reserved.</p>
         </div>
       </div>

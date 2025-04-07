@@ -12,8 +12,13 @@ const Header = () => {
         <header className="bg-white shadow-md">
     <div className="container mx-auto px-4 py-4">
         <div className="flex-between">
-        <Link to="/" className="textlogo">
-            Therapymart
+        <Link to="/" className="flex items-center textlogo">
+            <img 
+            src="/logo.png" 
+            alt="Therapymart Logo" 
+            className="logo-image"
+            />
+            <span>Therapymart</span>
         </Link>
         
         <div className="flex-icons">

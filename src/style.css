@@ -18,3 +18,355 @@
     font-size: 35px;
     font-weight: 600;
 }
+
+.search-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-wrapper {
+  display: flex;
+  border: 1px solid #60a5fa; /* blue border */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* blue focus ring */
+}
+
+.search-button {
+  background-color: #2563eb; /* blue */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #1d4ed8;
+}
+
+.footer {
+  background-color: #1e40af; /* blue-800 */
+  color: white;
+  padding: 3rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-left: 15%;
+}
+
+.footer-title{
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icon {
+  margin-right: 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e3a8a; /* blue-700 */
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Container for the entire product detail card */
+.product-detail {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+/* Inner container to hold image and info side by side */
+.product-detail-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* On larger screens, show image and info side by side */
+@media (min-width: 768px) {
+  .product-detail-inner {
+    flex-direction: row;
+  }
+}
+
+/* Section for the product image and thumbnails */
+.product-image-section {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .product-image-section {
+    width: 50%;
+  }
+}
+
+/* Main product image style */
+.product-image {
+  width: 70%; /* Default width on large screens */
+  height: 600px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; /* Center image horizontally */
+}
+
+/* On mobile, make main image full width */
+@media (max-width: 768px) {
+  .product-image {
+    width: 100%;
+  }
+}
+
+/* Thumbnails container */
+.product-thumbnails {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+/* Thumbnail container style */
+.product-thumbnail {
+  border: 2px solid transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Active thumbnail border */
+.product-thumbnail.active {
+  border-color: #2563eb; /* blue */
+}
+
+/* Thumbnail image styling */
+.thumbnail-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* Section for product information */
+.product-info-section {
+  width: 100%;
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .product-info-section {
+    width: 50%;
+    padding: 24px;
+  }
+}
+
+/* Product name style */
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 16px;
+}
+
+/* Product price style */
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 16px;
+}
+
+/* Product description styles */
+.product-description h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.product-description p {
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Container for action buttons */
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: #10b981; /* green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #059669;
+}
+
+/* Add to Cart button */
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Icon spacing in buttons */
+.action-icon {
+  margin-right: 8px;
+}
+
+
+.header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 20px;
+}
+
+.header-logo {
+  flex: 1;
+}
+
+.header-logo .textlogo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e40af; /* blue-800 */
+  text-decoration: none;
+}
+
+.header-search {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.header-icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-link {
+  color: #1e40af;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  color: #2563eb; /* lighter blue */
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-image{
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  margin-bottom: ;
+}

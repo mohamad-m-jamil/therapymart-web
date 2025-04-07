@@ -368,5 +368,214 @@
   width: 60px;
   height: 60px;
   margin-right: 20px;
-  margin-bottom: ;
 }
+
+/* Container and Page Title */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e40af; /* blue-800 */
+  margin-bottom: 1.5rem;
+}
+
+/* Empty Cart Styles */
+.empty-cart {
+  text-align: center;
+  padding: 2rem 0;
+}
+.empty-message {
+  font-size: 1.25rem;
+  color: #4a5568; /* gray-600 */
+  margin-bottom: 1rem;
+}
+.continue-shopping-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.continue-shopping-btn:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+/* Cart Table Styles */
+.cart-table-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart-table-head {
+  background-color: #ebf8ff; /* light blue */
+}
+.cart-th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.cart-th.center {
+  text-align: center;
+}
+.cart-th.right {
+  text-align: right;
+}
+.cart-row {
+  border-bottom: 1px solid #e2e8f0; /* light gray */
+  transition: background-color 0.3s ease;
+}
+.cart-row:hover {
+  background-color: #f7fafc; /* very light gray */
+}
+.cart-td {
+  padding: 0.75rem 1rem;
+}
+.cart-td.center {
+  text-align: center;
+}
+.cart-td.right {
+  text-align: right;
+}
+.cart-product {
+  display: flex;
+  align-items: center;
+}
+.cart-product-image {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+.cart-product-name {
+  font-weight: 500;
+}
+
+/* Quantity Control */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.qty-btn {
+  padding: 0.25rem 0.75rem;
+  background-color: #edf2f7; /* light gray */
+  color: #2d3748; /* dark gray */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.qty-btn:hover {
+  background-color: #e2e8f0;
+}
+.qty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.qty-value {
+  min-width: 2rem;
+  text-align: center;
+}
+
+/* Remove Button */
+.remove-btn {
+  color: #e53e3e; /* red */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.remove-btn:hover {
+  color: #c53030;
+}
+
+/* Cart Table Footer */
+.cart-table-foot {
+  background-color: #f7fafc; /* very light gray */
+}
+.cart-total-label {
+  text-align: right;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+}
+.cart-total-value {
+  text-align: right;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+}
+
+/* Cart Actions */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.action-left {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.clear-cart-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #fed7d7; /* light red */
+  color: #c53030;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.clear-cart-btn:hover {
+  background-color: #fbb6ce;
+}
+.checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #10b981; /* green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.checkout-btn:hover {
+  background-color: #059669;
+}
+.checkout-icon {
+  margin-right: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 30px !important;
+  }
+
+  .textt {
+    margin-left: -18px;
+    font-size: 25px;
+  }
+
+  .flex-icons {
+    margin-left: 40px !important; /* Ensuring the margin is applied */
+  }
+}
+

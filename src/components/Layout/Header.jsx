@@ -18,7 +18,7 @@ const Header = () => {
             alt="Therapymart Logo" 
             className="logo-image"
             />
-            <span>Therapymart</span>
+            <span className="textt">Therapymart</span>
         </Link>
         
         <div className="flex-icons">

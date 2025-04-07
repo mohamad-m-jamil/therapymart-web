@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-columns">
           <div className="footer-column">
-            <h3 className="footer-title">MediMerch</h3>
+            <h3 className="footer-title">Therapymart</h3>
             <p>Quality medical merchandise for healthcare professionals.</p>
           </div>
           
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} MediMerch. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Therapymart. All rights reserved.</p>
         </div>
       </div>
     </footer>

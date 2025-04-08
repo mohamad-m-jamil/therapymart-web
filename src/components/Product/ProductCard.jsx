@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import LazyImage from '../common/LazyImage';
-import '../../style.css'; // Make sure the path is correct
+import '../../style.css';
 
 const ProductCard = ({ product }) => {
   return (
@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
             src={product.images[0]} 
             alt={product.name}
             width="100%"
-            height="200px"
+            height="180px"
             className="product-image"
           />
         </div>

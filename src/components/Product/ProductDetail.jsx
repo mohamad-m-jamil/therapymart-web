@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LazyImage from '../common/LazyImage';
 import { FaWhatsapp, FaWallet } from 'react-icons/fa';
-import '../../style.css'; // ensure this path is correct
+import '../../style.css';
 
 const ProductDetail = ({ product, onAddToCart }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -15,13 +15,15 @@ const ProductDetail = ({ product, onAddToCart }) => {
     <div className="product-detail">
       <div className="product-detail-inner">
         <div className="product-image-section">
-          <LazyImage 
-            src={product.images[selectedImageIndex]} 
-            alt={product.name}
-            width="100%"
-            height="600px"
-            className="product-image"
-          />
+          <div className="main-image-container">
+            <LazyImage 
+              src={product.images[selectedImageIndex]} 
+              alt={product.name}
+              width="100%"
+              height="auto"
+              className="product-image"
+            />
+          </div>
           <div className="product-thumbnails">
             {product.images.map((image, index) => (
               <div 
@@ -32,8 +34,8 @@ const ProductDetail = ({ product, onAddToCart }) => {
                 <LazyImage 
                   src={image} 
                   alt={`${product.name} - view ${index + 1}`}
-                  width="80px"
-                  height="80px"
+                  width="100%"
+                  height="100%"
                   className="thumbnail-image"
                 />
               </div>

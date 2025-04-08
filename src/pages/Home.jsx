@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import ProductCard from '../components/Product/ProductCard';
 import ProductSearch from '../components/Product/ProductSearch';
 import { getAllProducts } from '../data/products';
+import '../style.css'; // Ensure this path is correct
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   
   useEffect(() => {
-    // Fetch products (in a real app, this would be an API call)
     const fetchedProducts = getAllProducts();
     setProducts(fetchedProducts);
     setFilteredProducts(fetchedProducts);
@@ -27,18 +27,21 @@ const Home = () => {
   };
   
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-blue-800 mb-4">Medical Supply Store</h1>
-        <ProductSearch onSearch={handleSearch} />
+    <div className="home-container">
+      <div className="home-header">
+        <h1 className="home-title">Medical Supply Store</h1>
+        <p className="home-subtitle">Find the best products for your clinic and home care</p>
+        <div className="product-search-wrapper">
+          <ProductSearch onSearch={handleSearch} />
+        </div>
       </div>
       
       {filteredProducts.length === 0 ? (
-        <div className="text-center py-8">
-          <p className="text-lg text-gray-600">No products found. Try a different search term.</p>
+        <div className="no-products">
+          <p className="no-products-message">No products found. Try a different search term.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="products-grid">
           {filteredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -1,19 +1,20 @@
-// src/pages/ProductDetailPage.jsx - Updated with Cart Context
+// src/pages/ProductDetailPage.jsx - Updated with Popup Prompt
 import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaTimes, FaCheckCircle } from 'react-icons/fa';
 import ProductDetail from '../components/Product/ProductDetail';
 import { getProductById } from '../data/products';
 import { CartContext } from '../context/CartContext';
+import '../style.css';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const { addToCart } = useContext(CartContext);
   
   useEffect(() => {
-    // Simulate fetching data with a slight delay
     setLoading(true);
     setTimeout(() => {
       const fetchedProduct = getProductById(parseInt(id));
@@ -47,6 +48,40 @@ const ProductDetailPage = () => {
   
   return (
     <div>
+      {/* Popup Overlay */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <div className="popup-header">
+              <h3 className="popup-title">
+                <FaCheckCircle className="check-icon" />
+                Success!
+              </h3>
+              <button 
+                onClick={() => setShowPopup(false)}
+                className="popup-close"
+              >
+                <FaTimes />
+              </button>
+            </div>
+            <div className="popup-body">
+              <p>
+                <span className="product-name">{product.name}</span> has been 
+                added to your cart!
+              </p>
+              <div className="popup-actions">
+                <button
+                  onClick={() => setShowPopup(false)}
+                  className="popup-button"
+                >
+                  Continue Shopping
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="mb-6">
         <Link 
           to="/"
@@ -60,10 +95,21 @@ const ProductDetailPage = () => {
         product={product} 
         onAddToCart={(product) => {
           addToCart(product);
-          // Optional: Show a success notification
-          alert(`${product.name} added to cart!`);
+          setShowPopup(true);
         }} 
       />
+
+      <style>
+        {`
+          @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+          }
+          .animate-scaleIn {
+            animation: scaleIn 0.2s ease-out;
+          }
+        `}
+      </style>
     </div>
   );
 };

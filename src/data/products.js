@@ -3,6 +3,7 @@ const products = [
       id: 1,
       name: "Medical Scrubs Set",
       price: 45.99,
+      category: "medical-equipment",
       description: "Comfortable and durable scrubs set for medical professionals. Made from high-quality fabric that's both breathable and easy to clean. Available in multiple sizes and colors.",
       images: [
         "../../public/id11.jpg",
@@ -13,6 +14,7 @@ const products = [
       id: 2,
       name: "Digital Thermometer",
       price: 29.99,
+      category: "medical-equipment",
       description: "High-precision digital thermometer with quick reading capabilities. Features a clear LCD display and memory function to store previous readings.",
       images: [
         "../../public/id21.jpg",
@@ -25,6 +27,7 @@ const products = [
       id: 3,
       name: "Professional Stethoscope",
       price: 120.00,
+      category: "medical-equipment",
       description: "High-quality stethoscope designed for medical professionals. Features excellent acoustic sensitivity and comfortable ear tips for extended use.",
       images: [
         "../../public/id31.jpg",
@@ -34,6 +37,7 @@ const products = [
       id: 4,
       name: "Blood Pressure Monitor",
       price: 75.50,
+      category: "medical-equipment",
       description: "Automatic blood pressure monitor with easy-to-read display. Provides accurate measurements and stores previous readings for tracking purposes.",
       images: [
         "../../public/id41.jpg",
@@ -44,6 +48,7 @@ const products = [
       id: 5,
       name: "Medical Lab Coat",
       price: 35.99,
+      category: "medical-equipment",
       description: "Professional white lab coat for medical and laboratory settings. Features multiple pockets and durable, easy-to-clean fabric.",
       images: [
         "../../public/id51.jpg",
@@ -55,6 +60,7 @@ const products = [
       id: 6,
       name: "Pulse Oximeter",
       price: 49.99,
+      category: "medical-equipment",
       description: "Portable fingertip pulse oximeter that quickly and accurately measures blood oxygen levels and pulse rate. Includes a clear LED display and automatic power-off feature.",
       images: [
         "../../public/id61.jpg",
@@ -64,6 +70,7 @@ const products = [
       id: 7,
       name: "Medical ID Badge Holder",
       price: 12.99,
+      category: "medical-equipment",
       description: "Durable badge holder with retractable reel for medical ID cards. Available in multiple colors with a strong clip attachment.",
       images: [
         "../../public/id71.jpg",
@@ -73,6 +80,7 @@ const products = [
       id: 8,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "electrical-equipment",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id81.jpg",
@@ -82,6 +90,7 @@ const products = [
       id: 9,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "electrical-equipment",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id91.jpg",
@@ -91,6 +100,7 @@ const products = [
       id: 10,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "electrical-equipment",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id101.jpg",
@@ -100,6 +110,7 @@ const products = [
       id: 11,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "electrical-equipment",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id111.jpg",
@@ -107,8 +118,9 @@ const products = [
     },
     {
       id: 12,
-      name: "Compression Socks Set",
+      name: "electrical-equipment",
       price: 24.95,
+      category: "medical-equipment",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id121.jpg",
@@ -119,8 +131,9 @@ const products = [
     },
     {
       id: 13,
-      name: "Compression Socks Set",
+      name: "electrical-equipment",
       price: 24.95,
+      category: "medical-equipment",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id131.jpg",
@@ -133,6 +146,7 @@ const products = [
       id: 14,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "physical-therapy",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id141.jpg",
@@ -144,6 +158,7 @@ const products = [
       id: 15,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "physical-therapy",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id151.jpg",
@@ -155,6 +170,7 @@ const products = [
       id: 16,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "physical-therapy",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id161.jpg",
@@ -166,6 +182,7 @@ const products = [
       id: 17,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "physical-therapy",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id171.jpg",
@@ -177,6 +194,7 @@ const products = [
       id: 18,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "physical-therapy",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id181.jpg",
@@ -189,6 +207,7 @@ const products = [
       id: 19,
       name: "Compression Socks Set",
       price: 24.95,
+      category: "physical-therapy",
       description: "Set of 3 pairs of compression socks designed for healthcare workers who stand for long periods. Provides comfort and improves circulation.",
       images: [
         "../../public/id191.jpg",

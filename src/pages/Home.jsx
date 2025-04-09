@@ -1,6 +1,8 @@
+// src/pages/Home.jsx
 import { useState, useEffect } from 'react';
 import ProductCard from '../components/Product/ProductCard';
 import ProductSearch from '../components/Product/ProductSearch';
+import CategoryFilter from '../components/Product/CategoryFilter';
 import { getAllProducts } from '../data/products';
 import '../style.css';
 
@@ -8,6 +10,8 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   
   useEffect(() => {
     // Add the home-page class to the body when component mounts
@@ -43,15 +47,34 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, []);
   
-  const handleSearch = (searchTerm) => {
-    if (!searchTerm.trim()) {
-      setFilteredProducts(products);
-      return;
+  // Handle search input changes
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    filterProducts(term, selectedCategory);
+  };
+  
+  // Handle category selection changes
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    filterProducts(searchTerm, category);
+  };
+  
+  // Filter products based on both search term and category
+  const filterProducts = (term, category) => {
+    let filtered = products;
+    
+    // Apply search filter if there's a term
+    if (term.trim()) {
+      filtered = filtered.filter(product => 
+        product.name.toLowerCase().includes(term.toLowerCase())
+      );
     }
     
-    const filtered = products.filter(product => 
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // Apply category filter if not "all"
+    if (category !== 'all') {
+      filtered = filtered.filter(product => product.category === category);
+    }
+    
     setFilteredProducts(filtered);
   };
   
@@ -65,13 +88,21 @@ const Home = () => {
         </div>
       </div>
       
+      {/* Add Category Filter */}
+      <div className="category-section">
+        <CategoryFilter 
+          selectedCategory={selectedCategory} 
+          onCategoryChange={handleCategoryChange} 
+        />
+      </div>
+      
       {isLoading ? (
         <div className="loading-container">
           <p className="loading-text">Loading products...</p>
         </div>
       ) : filteredProducts.length === 0 ? (
         <div className="no-products">
-          <p className="no-products-message">No products found. Try a different search term.</p>
+          <p className="no-products-message">No products found. Try a different search term or category.</p>
         </div>
       ) : (
         <div className="products-grid">

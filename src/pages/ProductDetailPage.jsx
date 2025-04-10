@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FaArrowLeft, FaTimes, FaCheckCircle } from 'react-icons/fa';
+import { FaArrowLeft, FaTimes, FaCheckCircle, FaShoppingCart } from 'react-icons/fa';
 import ProductDetail from '../components/Product/ProductDetail';
 import ProductCard from '../components/Product/ProductCard';
 import { getProductById, getAllProducts } from '../data/products';
@@ -26,13 +26,27 @@ const ProductDetailPage = () => {
         const allProducts = getAllProducts();
         const related = allProducts
           .filter(p => p.category === fetchedProduct.category && p.id !== fetchedProduct.id)
-          .slice(0, 8); // Limit to 4 related products
+          .slice(0, 8); // Limit to 8 related products
         setRelatedProducts(related);
       }
       
       setLoading(false);
     }, 300);
   }, [id]);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setShowPopup(true);
+    
+    // Automatically hide popup after 5 seconds
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 5000);
+  };
+  
+  const closePopup = () => {
+    setShowPopup(false);
+  };
   
   if (loading) {
     return (
@@ -58,13 +72,30 @@ const ProductDetailPage = () => {
   }
   
   return (
-    <div>
-      {/* Popup Overlay - same as before */}
+    <div className="relative">
+      {/* Popup Overlay */}
       {showPopup && (
-        <div className="popup-overlay">
-          {/* ... existing popup code ... */}
+      <div className="popup-overlay">
+        <div className="popup">
+          <button onClick={closePopup} className="close-btn">
+            <FaTimes />
+          </button>
+          <FaCheckCircle style={{ color: 'green', fontSize: '40px', marginBottom: '10px' }} />
+          <h3>Added to Cart</h3>
+          <p>{product.name} has been added to your cart successfully!</p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <Link to="/cart" className="button button-primary">
+              <FaShoppingCart style={{ marginRight: '8px' }} /> View Cart
+            </Link>
+            <button onClick={closePopup} className="button button-secondary">
+              Continue Shopping
+            </button>
+          </div>
         </div>
-      )}
+      </div>
+    )}
+
 
       <div className="mb-6">
         <Link 
@@ -77,26 +108,21 @@ const ProductDetailPage = () => {
       
       <ProductDetail 
         product={product} 
-        onAddToCart={(product) => {
-          addToCart(product);
-          setShowPopup(true);
-        }} 
+        onAddToCart={handleAddToCart} 
       />
 
-      {/* Related Products Section */}
-      {relatedProducts.length > 0 && (
-        <div className="related-products-section">
-          <h2 className="related-products-title">Related Products</h2>
-          <div className="related-products-grid">
-            {relatedProducts.map(relatedProduct => (
-              <ProductCard 
-                key={relatedProduct.id} 
-                product={relatedProduct} 
-              />
-            ))}
-          </div>
+          {/* Related Products Section */}
+          {relatedProducts.length > 0 && (
+      <div className="related-products-section">
+        <h2 className="related-products-title">Related Products</h2>
+        <div className="related-products-grid">
+          {relatedProducts.map(relatedProduct => (
+            <ProductCard key={relatedProduct.id} product={relatedProduct} />
+          ))}
         </div>
-      )}
+      </div>
+    )}
+
     </div>
   );
 };

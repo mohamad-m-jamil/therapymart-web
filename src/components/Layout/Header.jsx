@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaInstagram } from 'react-icons/fa';
 import { CartContext } from '../../context/CartContext';
 import '../../style.css';
+import logo from '../../../logo.png';
 
 const Header = () => {
   const { getCartItemCount } = useContext(CartContext);
@@ -14,11 +15,11 @@ const Header = () => {
         <div className="flex-between">
           <Link to="/" className="textlogo">
             <div className="logo-container">
-              <img 
-                src="/logo.png" 
-                alt="Therapymart Logo" 
-                className="logo-image"
-              />
+            <img 
+              src={logo}
+              alt="Therapymart Logo"
+              className="logo-image"
+            />
               <span className="textt">Therapymart</span>
             </div>
           </Link>

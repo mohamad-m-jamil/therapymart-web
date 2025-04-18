@@ -6,9 +6,11 @@ const CategoryFilter = ({ selectedCategory, onCategoryChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const categories = [
     { id: 'all', name: 'All Products' },
-    { id: 'medical-equipment', name: 'Medical Equipment' },
-    { id: 'electrical-equipment', name: 'Electrical Equipment' },
-    { id: 'physical-therapy', name: 'Physical Therapy' }
+    { id: 'fitness', name: 'Fitness' },
+    { id: 'massage-tools', name: 'Massage tools' },
+    { id: 'supplements', name: 'Supplements' },
+    { id: 'pain-relief', name: 'Pain relief' },
+    { id: 'pillows', name: 'Pillows' }
   ];
 
   return (

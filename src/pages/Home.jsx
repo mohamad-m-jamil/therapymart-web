@@ -81,11 +81,10 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-header">
-        <h1 className="home-title">Medical Supply Store</h1>
-        <p className="home-subtitle">Find the best products for your clinic and home care</p>
-        <div className="product-search-wrapper">
+        <h1 className="home-title">Your source of healing essentials</h1>
+        {/* <div className="product-search-wrapper">
           <ProductSearch onSearch={handleSearch} />
-        </div>
+        </div> */}
       </div>
       
       {/* Add Category Filter */}

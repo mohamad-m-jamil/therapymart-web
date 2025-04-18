@@ -9,8 +9,8 @@ const CategoryFilter = ({ selectedCategory, onCategoryChange }) => {
     { id: 'fitness', name: 'Fitness' },
     { id: 'massage-tools', name: 'Massage tools' },
     { id: 'supplements', name: 'Supplements' },
-    { id: 'pain-relief', name: 'Pain relief' },
-    { id: 'pillows', name: 'Pillows' }
+    { id: 'pain-relief', name: 'Pain relief' }
+    // { id: 'pillows', name: 'Pillows' }
   ];
 
   return (

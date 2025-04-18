@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaTimes, FaCheckCircle, FaShoppingCart } from 'react-icons/fa';
 import ProductDetail from '../components/Product/ProductDetail';
 import ProductCard from '../components/Product/ProductCard';
@@ -12,30 +12,49 @@ const ProductDetailPage = () => {
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
   
   useEffect(() => {
     // Scroll to top when component mounts or when id changes
     window.scrollTo(0, 0);
     
     setLoading(true);
-    setTimeout(() => {
-      const fetchedProduct = getProductById(parseInt(id));
-      setProduct(fetchedProduct);
+    setError(null);
+    
+    try {
+      // Validate ID is a number
+      const productId = parseInt(id);
+      if (isNaN(productId)) {
+        throw new Error("Invalid product ID format");
+      }
       
-      // Get related products (same category, excluding current product)
-      if (fetchedProduct) {
+      setTimeout(() => {
+        const fetchedProduct = getProductById(productId);
+        
+        if (!fetchedProduct) {
+          throw new Error("Product not found");
+        }
+        
+        setProduct(fetchedProduct);
+        
+        // Get related products (same category, excluding current product)
         const allProducts = getAllProducts();
         const related = allProducts
           .filter(p => p.category === fetchedProduct.category && p.id !== fetchedProduct.id)
           .slice(0, 8); // Limit to 8 related products
         setRelatedProducts(related);
-      }
-      
+        
+        setLoading(false);
+      }, 300);
+    } catch (err) {
+      console.error("Error loading product:", err);
+      setError(err.message);
       setLoading(false);
-    }, 300);
-  }, [id]);
+    }
+  }, [id, navigate]);
 
   const handleAddToCart = (product) => {
     addToCart(product);
@@ -59,10 +78,12 @@ const ProductDetailPage = () => {
     );
   }
   
-  if (!product) {
+  if (error || !product) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold text-red-600 mb-4">Product Not Found</h2>
+        <h2 className="text-2xl font-bold text-red-600 mb-4">
+          {error ? `Error: ${error}` : "Product Not Found"}
+        </h2>
         <p className="mb-6">The product you're looking for doesn't exist or has been removed.</p>
         <Link 
           to="/"
@@ -99,7 +120,6 @@ const ProductDetailPage = () => {
       </div>
     )}
 
-
       <div className="mb-6">
         <Link 
           to="/"
@@ -125,7 +145,6 @@ const ProductDetailPage = () => {
         </div>
       </div>
     )}
-
     </div>
   );
 };

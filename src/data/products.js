@@ -621,17 +621,25 @@ const products = [
   },
 ];
 
-export const getAllProducts = () => products;
+export const getAllProducts = () => {
+  try {
+    return products;
+  } catch (error) {
+    console.error("Error getting all products:", error);
+    return [];
+  }
+};
 
 export const getProductById = (id) => {
   try {
     // Make sure id is a valid number
-    if (isNaN(id)) {
-      console.error("Invalid product ID:", id);
+    const productId = parseInt(id);
+    if (isNaN(productId)) {
+      console.error("Invalid product ID format:", id);
       return null;
     }
     
-    const product = products.find(p => p.id === parseInt(id));
+    const product = products.find(product => product.id === productId);
     
     if (!product) {
       console.error("Product not found with ID:", id);
@@ -646,9 +654,16 @@ export const getProductById = (id) => {
 };
 
 export const searchProducts = (query) => {
-  const lowercaseQuery = query.toLowerCase();
-  return products.filter(product => 
-    product.name.toLowerCase().includes(lowercaseQuery) || 
-    product.description.toLowerCase().includes(lowercaseQuery)
-  );
+  try {
+    if (!query) return products;
+    
+    const lowercaseQuery = query.toLowerCase();
+    return products.filter(product => 
+      product.name.toLowerCase().includes(lowercaseQuery) || 
+      product.description.toLowerCase().includes(lowercaseQuery)
+    );
+  } catch (error) {
+    console.error("Error searching products:", error);
+    return [];
+  }
 };

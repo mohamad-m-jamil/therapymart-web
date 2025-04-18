@@ -623,7 +623,27 @@ const products = [
 
 export const getAllProducts = () => products;
 
-export const getProductById = (id) => products.find(product => product.id === id);
+export const getProductById = (id) => {
+  try {
+    // Make sure id is a valid number
+    if (isNaN(id)) {
+      console.error("Invalid product ID:", id);
+      return null;
+    }
+    
+    const product = products.find(p => p.id === parseInt(id));
+    
+    if (!product) {
+      console.error("Product not found with ID:", id);
+      return null;
+    }
+    
+    return product;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+    return null;
+  }
+};
 
 export const searchProducts = (query) => {
   const lowercaseQuery = query.toLowerCase();

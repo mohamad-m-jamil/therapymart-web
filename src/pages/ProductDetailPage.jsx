@@ -16,6 +16,9 @@ const ProductDetailPage = () => {
   const { addToCart } = useContext(CartContext);
   
   useEffect(() => {
+    // Scroll to top when component mounts or when id changes
+    window.scrollTo(0, 0);
+    
     setLoading(true);
     setTimeout(() => {
       const fetchedProduct = getProductById(parseInt(id));
@@ -111,8 +114,8 @@ const ProductDetailPage = () => {
         onAddToCart={handleAddToCart} 
       />
 
-          {/* Related Products Section */}
-          {relatedProducts.length > 0 && (
+      {/* Related Products Section */}
+      {relatedProducts.length > 0 && (
       <div className="related-products-section">
         <h2 className="related-products-title">Related Products</h2>
         <div className="related-products-grid">

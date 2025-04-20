@@ -9,7 +9,12 @@ const CategoryFilter = ({ selectedCategory, onCategoryChange }) => {
     { id: 'fitness', name: 'Fitness' },
     { id: 'massage-tools', name: 'Massage tools' },
     { id: 'supplements', name: 'Supplements' },
-    { id: 'pain-relief', name: 'Pain relief' }
+    { id: 'pain-relief', name: 'Pain relief' },
+    { id: 'skin-care', name: 'Skin Care' },
+    { id: 'hair-care', name: 'Hair Care' },
+    { id: 'hand-and-foot-care', name: 'Hand And Foot Care' },
+    { id: 'lips-care', name: 'Lips Care' },
+    { id: 'mouth-care', name: 'Mouth Care' },
     // { id: 'pillows', name: 'Pillows' }
   ];
 

@@ -217,6 +217,36 @@ const products = [
     ]
   },
   {
+    id: 87,
+    name: "Roxonin Pain Relieving",
+    price: 0,
+    category: "pain-relief",
+    description: ".",
+    images: [
+      "/Roxonin-Pain-Relieving.jpg",
+    ]
+  },
+  {
+    id: 88,
+    name: "CLOFEN Creamagel",
+    price: 0,
+    category: "pain-relief",
+    description: ".",
+    images: [
+      "/CLOFEN-Creamagel.jpg",
+    ]
+  },
+  {
+    id: 89,
+    name: "Radian Massage Cream",
+    price: 0,
+    category: "pain-relief",
+    description: ".",
+    images: [
+      "/Radian-Massage-Cream.jpg",
+    ]
+  },
+  {
     id: 20,
     name: "Kids Elbow Brace Support",
     price: 25,
@@ -617,6 +647,310 @@ const products = [
     images: [
       "/id321.jpg",
       "/id322.jpg",
+    ]
+  },
+  {
+    id: 57,
+    name: "DEPI AHA+C SERUM",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/DEPI-AHA+C-SERUM.jpg",
+      "/DEPI-AHA+C-SERUM2.jpg",
+    ]
+  },
+  {
+    id: 58,
+    name: "EYEVIF C+ eye serum",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/EYEVIF-C+.jpg",
+    ]
+  },
+  {
+    id: 59,
+    name: "EYEVIF caffeine+ cream",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/EYEVIF-caffeine+-cream.jpg",
+    ]
+  },
+  {
+    id: 60,
+    name: "PHYTO RETINOL +C SERUM",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/PHYTO-RETINOL+C-SERUM.jpg",
+      "/PHYTO-RETINOL+C-SERUM2.jpg",
+    ]
+  },
+  {
+    id: 61,
+    name: "VITAMINE  SERUM",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/VITAMINE-E-SERUM.jpg",
+      "/VITAMINE-E-SERUM2.jpg",
+    ]
+  },
+  {
+    id: 62,
+    name: "HYDRAGLUVA Creme Hydratante",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/HYDRAGLUVA-Creme-Hydratante.jpg",
+      "/HYDRAGLUVA-Creme-Hydratante2.jpg",
+    ]
+  },
+  {
+    id: 63,
+    name: "Cerave Moisturising lotion",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/Cerave-Moisturising-lotion.jpg",
+    ]
+  },
+  {
+    id: 64,
+    name: "Cerave Moisturising lotion",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/Cerave-Moisturising-lotion.jpg",
+    ]
+  },
+  {
+    id: 65,
+    name: "Cerave Moisturising cream",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/Cerave-Moisturising-cream.jpg",
+    ]
+  },
+  {
+    id: 66,
+    name: "Cerave-Acne-Control-Cleanser",
+    price: 0,
+    category: "skin-care",
+    description: ".",
+    images: [
+      "/Cerave-Acne-Control-Cleanser.jpg",
+    ]
+  },
+  {
+    id: 67,
+    name: "KLORANE",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/KLORANE1.jpg",
+    ]
+  },
+  {
+    id: 68,
+    name: "KLORANE",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/KLORANE2.jpg",
+    ]
+  },
+  {
+    id: 69,
+    name: "KLORANE",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/KLORANE3.jpg",
+    ]
+  },
+  {
+    id: 70,
+    name: "KLORANE",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/KLORANE4.jpg",
+    ]
+  },
+  {
+    id: 71,
+    name: "KLORANE",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/KLORANE5.jpg",
+    ]
+  },
+  {
+    id: 72,
+    name: "DERCOS (Anti-pelliculaire, Anti-dandruff)",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/DERCOS-Anti-pelliculaire-Anti-dandruff.jpg",
+    ]
+  },
+  {
+    id: 73,
+    name: "DERCOS (Sebo Correcteur, Oil control)",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/DERCOS-Sebo-Correcteur-Oil-control.jpg",
+    ]
+  },
+  {
+    id: 74,
+    name: "DERCOS (Densi Solutions)",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/DERCOS-Densi-Solutions.jpg",
+    ]
+  },
+  {
+    id: 75,
+    name: "DERCOS (Energy)",
+    price: 0,
+    category: "hair-care",
+    description: ".",
+    images: [
+      "/DERCOS-Energy.jpg",
+    ]
+  },
+  {
+    id: 76,
+    name: "Primavea Organic Hand & Skin Repair Cream",
+    price: 0,
+    category: "hand-and-foot-care",
+    description: ".",
+    images: [
+      "/Primavea-Organic-Hand&Skin-Repair-Cream.jpg",
+    ]
+  },
+  {
+    id: 77,
+    name: "Vaseline Hydra Healthy, Hand Lotion",
+    price: 0,
+    category: "hand-and-foot-care",
+    description: ".",
+    images: [
+      "/Vaseline-Hydra-Healthy-Hand-Lotion.jpg",
+    ]
+  },
+  {
+    id: 78,
+    name: "HYDRA +UREA Hand & Foot Cream",
+    price: 0,
+    category: "hand-and-foot-care",
+    description: ".",
+    images: [
+      "/HYDRA+UREA-Hand&Foot-Cream.jpg",
+    ]
+  },
+  {
+    id: 79,
+    name: "Optimal Softening Foot Cream",
+    price: 0,
+    category: "hand-and-foot-care",
+    description: ".",
+    images: [
+      "/Optimal-Softening-Foot-Cream.jpg",
+    ]
+  },
+  {
+    id: 80,
+    name: "Eucerin Urea Repair",
+    price: 0,
+    category: "hand-and-foot-care",
+    description: ".",
+    images: [
+      "/Eucerin-Urea-Repair.jpg",
+    ]
+  },
+  {
+    id: 81,
+    name: "Eucerin Urea Repair (Plus)",
+    price: 0,
+    category: "hand-and-foot-care",
+    description: ".",
+    images: [
+      "/Eucerin-Urea-Repair-Plus.jpg",
+    ]
+  },
+  {
+    id: 82,
+    name: "Vaseline Original lip blam",
+    price: 0,
+    category: "lips-care",
+    description: ".",
+    images: [
+      "/Vaseline-Original-lip-blam.jpg",
+    ]
+  },
+  {
+    id: 83,
+    name: "ELGYDIUM (GEL DENTIFRICE)",
+    price: 0,
+    category: "mouth-care",
+    description: ".",
+    images: [
+      "/ELGYDIUM-GEL-DENTIFRICE.jpg",
+    ]
+  },
+  {
+    id: 84,
+    name: "ELGYDIUM (TOOTHPASTE)",
+    price: 0,
+    category: "mouth-care",
+    description: ".",
+    images: [
+      "/ELGYDIUM-TOOTHPASTE.jpg",
+    ]
+  },
+  {
+    id: 85,
+    name: "LISTERINE (FRESH BURST)",
+    price: 0,
+    category: "mouth-care",
+    description: ".",
+    images: [
+      "/LISTERINE-FRESH-BURST.jpg",
+    ]
+  },
+  {
+    id: 86,
+    name: "LISTERINE (COOL MINT)",
+    price: 0,
+    category: "mouth-care",
+    description: ".",
+    images: [
+      "/LISTERINE-COOL-MINT.jpg",
     ]
   },
 ];
